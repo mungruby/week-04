@@ -5,6 +5,7 @@ describe "#find_quote" do
   context "when the file does not exist" do
     
     it "should return the default quote" do
+      pending
       default_quote = find_quote("FILE_DOES_NOT_EXIST",3)
       default_quote.should == "Could not find a quote at this time"
     end
@@ -14,6 +15,7 @@ describe "#find_quote" do
   context "when the file exists" do
     
     it "should return a (random) quote when a line value is not specified" do
+      pending
       quote = find_quote(TEXT_FILE)
       quote.should_not be_nil
     end
@@ -21,6 +23,7 @@ describe "#find_quote" do
     context "when a single line has been specified" do
 
       it "should return the correct value at the specified line" do
+        pending
         quote = find_quote(TEXT_FILE,1)
         quote.should == "The dude abides"
       end
@@ -28,6 +31,7 @@ describe "#find_quote" do
       context "when the line specified is greater than the number of quotes" do
         
         it "should return any quote" do
+          pending
           quote = find_quote(TEXT_FILE,999)
           quote.should_not be_nil
         end
