@@ -8,12 +8,12 @@
 # @see Programing Ruby, Chapter 6 
 #
 def search_for_quote a_hash
-  @quotes = all_quotes a_hash.delete(:file)
-  return @quotes if @quotes.empty? or a_hash.empty?
+  quotes = all_quotes a_hash.delete(:file)
+  return quotes if quotes.empty? or a_hash.empty?
 
   results = []  
   a_hash.each do |criterion|
-    results.concat @quotes.select {|quote| quote =~ create_regexp(*criterion)}    
+    results.concat quotes.select {|quote| quote =~ create_regexp(*criterion)}    
   end
   results
 end
