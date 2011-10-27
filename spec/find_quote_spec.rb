@@ -5,8 +5,8 @@ describe "#find_quote" do
   context "when the file does not exist" do
     
     it "should return the default quote" do
-      pending
-      default_quote = find_quote("FILE_DOES_NOT_EXIST",3)
+      # pending
+      default_quote = find_quote("FILE_DOES_NOT_EXIST", 3)
       default_quote.should == "Could not find a quote at this time"
     end
     
