@@ -11,6 +11,8 @@
 def url_builder url, parms = {}
   parms = {results: '10', sort: 'asc'}.merge(parms)
 
+  # url << '?'
+
   url = url + '?'
   parms.each {|k, v| url << "#{k}=#{v}&" unless v == nil}
   url.chop
