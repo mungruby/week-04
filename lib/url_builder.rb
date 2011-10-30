@@ -9,9 +9,9 @@
 # @see Programing Ruby, Chapter 6 
 #
 def url_builder url, parms = {}
-  return "#{url}?results=10" if parms.empty?
+  parms = {results: '10', sort: 'asc'}.merge(parms)
 
-  url << '?'
-  parms.each {|k, v| url << "#{k}=#{v}&" if v}
+  url = url + '?'
+  parms.each {|k, v| url << "#{k}=#{v}&" unless v == nil}
   url.chop
 end
