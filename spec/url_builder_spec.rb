@@ -4,12 +4,8 @@ describe "#url_builder" do
   
   let(:url) { "http://google.com" }
   
-  # def url
-  #   "http://google.com"
-  # end
-  
 
-  context "when given no parameters" do
+  context"when given no parameters" do
     it "should generate a url with 10 results and ascending sort by default" do
       url_builder(url).should == "#{url}?results=10&sort=asc"
     end
