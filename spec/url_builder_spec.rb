@@ -37,9 +37,4 @@ describe "#url_builder" do
       # url_builder(url, :results => '20', :search => 'burgers', :sort_by => nil).should == "http://google.com?results=20&search=burgers"
     end
   end
-  
-  it "should fail" do
-    fail
-  end
-  
 end
