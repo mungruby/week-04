@@ -1,4 +1,3 @@
-
 #
 # Here is the original implementation of SuperHeroes#find_by method.
 # 
@@ -6,10 +5,17 @@
 # file 'spec/superheroes_find_by.rb' and uncomment those tests and change this 
 # method so that it finds superheroes that match all of the criteria.
 # 
-def SuperHeroes.find_by(criteria)
-  criteria.map do |field,value|
-    find_all do |hero|
-      hero[field] == value
-    end
-  end.flatten.uniq
+# def SuperHeroes.find_by criteria 
+#   criteria.map do |field, value|
+#     find_all do |hero|
+#       hero[field] == value
+#     end
+#   end.flatten.uniq
+# end
+
+def SuperHeroes.find_by criteria 
+  any_heroes = criteria.map do |field, value|
+    find_all {|hero| hero[field] == value}
+  end
+  any_heroes.inject() {|all_heroes, any_heroes| all_heroes & any_heroes}
 end
