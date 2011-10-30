@@ -15,8 +15,8 @@ end
 
 def create_regexp criterion, text
   case criterion
-    when :start_with then Regexp.new "^#{text}"
-    when :end_with   then Regexp.new "#{text}$"
-    when :include    then Regexp.new "#{text}"
+    when :start_with then %r(^#{text})
+    when :end_with   then %r(#{text}$)
+    when :include    then %r(#{text})
   end
 end
