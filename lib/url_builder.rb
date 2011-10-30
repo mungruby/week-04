@@ -13,7 +13,7 @@ def url_builder url, parms = {}
 
   # url << '?'
 
-  url = url + '?'
+  url= url + '?'
   parms.each {|k, v| url << "#{k}=#{v}&" unless v == nil}
   url.chop
 end
