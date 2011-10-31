@@ -9,7 +9,7 @@
 #
 def search_for_quote criteria
   quotes = all_quotes(criteria.delete(:file))
-  results = criteria.map {|criterion| quotes.select {|quote| quote =~ create_regexp(*criterion)}}.flatten
+  results = criteria.map {|criterion| quotes.grep(create_regexp(*criterion))}.flatten
   results.empty? ? quotes : results
 end
 
