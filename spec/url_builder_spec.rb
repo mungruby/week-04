@@ -4,8 +4,7 @@ describe "#url_builder" do
   
   let(:url) { "http://google.com" }
   
-
-  context"when given no parameters" do
+  context "when given no parameters" do
     it "should generate a url with 10 results and ascending sort by default" do
       url_builder(url).should == "#{url}?results=10&sort=asc"
     end
@@ -14,7 +13,7 @@ describe "#url_builder" do
   context "when given a single parameter" do
   
     it "should override the default parameters" do
-      url_builder(url, :results => 20).should == "#{url}?results=20&sort=asc"
+      url_builder(url, :results => '20').should == "#{url}?results=20&sort=asc"
     end
     
     it "should append the parameter to the url" do
